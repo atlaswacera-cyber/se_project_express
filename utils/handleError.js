@@ -4,7 +4,7 @@ const handleError = (res, err) => {
   console.error(err);
 
   if (err.name === "ValidationError" || err.name === "CastError") {
-    return res.status(BAD_REQUEST).send({ message: err.message });
+    return res.status(BAD_REQUEST).send({ message: "Invalid data" });
   }
 
   if (err.statusCode === NOT_FOUND) {
