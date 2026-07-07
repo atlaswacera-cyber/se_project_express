@@ -26,6 +26,8 @@ Before committing your code, make sure you edit the file `sprint.txt` in the roo
 
 ## Project Pitch Video
 
+I recorded the project pitch in Loom. Loom did not allow me to download the video, so I added public Loom links directly to the README instead of Google Drive links.
+
 Check out:
 
 [Video 1](https://www.loom.com/share/1c142c3d2d1d40a2a9f557112c3a9f23)
