@@ -1,5 +1,5 @@
 const ClothingItem = require("../models/clothingItem");
-const { NOT_FOUND } = require("../utils/errors");
+const { FORBIDDEN, NOT_FOUND } = require("../utils/errors");
 const handleError = require("../utils/handleError");
 
 const getClothingItems = (req, res) =>
@@ -22,13 +22,21 @@ const createClothingItem = (req, res) => {
 };
 
 const deleteClothingItem = (req, res) =>
-  ClothingItem.findByIdAndDelete(req.params.itemId)
+  ClothingItem.findById(req.params.itemId)
     .orFail(() => {
       const error = new Error("Clothing item not found");
       error.statusCode = NOT_FOUND;
       throw error;
     })
-    .then((item) => res.send(item))
+    .then((item) => {
+      if (item.owner.toString() !== req.user._id) {
+        const error = new Error("You can only delete your own items");
+        error.statusCode = FORBIDDEN;
+        throw error;
+      }
+
+      return item.deleteOne().then(() => res.send(item));
+    })
     .catch((err) => handleError(res, err));
 
 const likeItem = (req, res) =>
