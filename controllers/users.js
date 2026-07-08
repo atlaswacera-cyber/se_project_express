@@ -2,14 +2,9 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const User = require("../models/user");
-const { BAD_REQUEST, CONFLICT, NOT_FOUND } = require("../utils/errors");
+const { BAD_REQUEST, NOT_FOUND } = require("../utils/errors");
 const { JWT_SECRET } = require("../utils/config");
 const handleError = require("../utils/handleError");
-
-const getUsers = (req, res) =>
-  User.find({})
-    .then((users) => res.send(users))
-    .catch((err) => handleError(res, err));
 
 const getCurrentUser = (req, res) =>
   User.findById(req.user._id)
@@ -28,16 +23,8 @@ const createUser = (req, res) => {
     return res.status(BAD_REQUEST).send({ message: "Invalid data" });
   }
 
-  return User.findOne({ email })
-    .then((existingUser) => {
-      if (existingUser) {
-        const error = new Error("Email already exists");
-        error.statusCode = CONFLICT;
-        throw error;
-      }
-
-      return bcrypt.hash(password, 10);
-    })
+  return bcrypt
+    .hash(password, 10)
     .then((hash) =>
       User.create({
         name,
@@ -93,7 +80,6 @@ const updateCurrentUser = (req, res) => {
 };
 
 module.exports = {
-  getUsers,
   getCurrentUser,
   createUser,
   login,
