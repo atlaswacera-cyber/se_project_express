@@ -10,6 +10,7 @@ module.exports = {
   },
   rules: {
     "no-console": "off",
+    "no-unused-vars": ["error", { argsIgnorePattern: "next" }],
     "no-underscore-dangle": ["error", { allow: ["_id"] }],
   },
 };

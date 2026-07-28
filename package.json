@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "dev": "nodemon --watch app.js --watch controllers --watch models --watch routes --watch utils app.js",
+    "dev": "nodemon --watch app.js --watch controllers --watch errors --watch middlewares --watch models --watch routes --watch utils app.js",
     "lint": "npx eslint ."
   },
   "repository": {
@@ -22,11 +22,15 @@
   "homepage": "https://github.com/atlaswacera-cyber/se_project_express#readme",
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "celebrate": "^15.0.3",
     "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
     "express": "^4.22.2",
+    "express-winston": "^4.2.0",
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^8.24.1",
-    "validator": "^13.15.35"
+    "validator": "^13.15.35",
+    "winston": "^3.19.0"
   },
   "devDependencies": {
     "eslint": "^8.57.1",
