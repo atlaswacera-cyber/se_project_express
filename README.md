@@ -12,7 +12,31 @@ items, and allows users to like or unlike clothing items.
 - Schema validation with Validator
 - ESLint, Airbnb style rules, and Prettier
 
-## Running the Project
+## Live Deployment
+
+Frontend: [https://wtwr-atlas.chickenkiller.com](https://wtwr-atlas.chickenkiller.com)
+
+API: [https://api.wtwr-atlas.chickenkiller.com](https://api.wtwr-atlas.chickenkiller.com)
+
+## Repositories
+
+Frontend repository: [https://github.com/atlaswacera-cyber/se_project_react](https://github.com/atlaswacera-cyber/se_project_react)
+
+Backend repository: [https://github.com/atlaswacera-cyber/se_project_express](https://github.com/atlaswacera-cyber/se_project_express)
+
+## Running the Project Locally
+
+Make sure MongoDB is running locally. Create a `.env` file with a `JWT_SECRET`
+value before starting the server.
+
+```bash
+npm install
+npm run dev
+```
+
+The API runs at `http://localhost:3001`.
+
+## Scripts
 
 `npm run start` launches the server on `localhost:3001`.
 
