@@ -4,39 +4,38 @@ This project provides the Express API and MongoDB database for the WTWR
 application. It stores users and clothing items, supports creating and deleting
 items, and allows users to like or unlike clothing items.
 
-## Technologies
+Technologies
 
-- Node.js and Express
-- MongoDB and Mongoose
-- REST API routing
-- Schema validation with Validator
-- ESLint, Airbnb style rules, and Prettier
+Node.js and Express
+MongoDB and Mongoose
+REST API routing
+Schema validation with Validator
+ESLint, Airbnb style rules, and Prettier
 
-## Live Deployment
+Live Deployment
 
 Frontend: [https://wtwr-atlas.chickenkiller.com](https://wtwr-atlas.chickenkiller.com)
 
 API: [https://api.wtwr-atlas.chickenkiller.com](https://api.wtwr-atlas.chickenkiller.com)
 
-## Repositories
+Repositories
 
 Frontend repository: [https://github.com/atlaswacera-cyber/se_project_react](https://github.com/atlaswacera-cyber/se_project_react)
 
 Backend repository: [https://github.com/atlaswacera-cyber/se_project_express](https://github.com/atlaswacera-cyber/se_project_express)
 
-## Running the Project Locally
+Running the Project Locally
 
 Make sure MongoDB is running locally. Create a `.env` file with a `JWT_SECRET`
 value before starting the server.
 
-```bash
+bash
 npm install
 npm run dev
-```
 
 The API runs at `http://localhost:3001`.
 
-## Scripts
+Scripts
 
 `npm run start` launches the server on `localhost:3001`.
 
@@ -44,11 +43,11 @@ The API runs at `http://localhost:3001`.
 
 `npm run lint` checks the project with ESLint.
 
-### Testing
+Testing
 
 Before committing your code, make sure you edit the file `sprint.txt` in the root folder. The file `sprint.txt` should contain the number of the sprint you're currently working on. For ex. 12
 
-## Project Pitch Video
+Project Pitch Video
 
 I recorded the project pitch in Loom. Loom did not allow me to download the video, so I added public Loom links directly to the README instead of Google Drive links.
 
